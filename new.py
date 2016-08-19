@@ -1,1 +1,1 @@
-print "nuevo archivo .py"
+print "nuevo archivo .py python sucks :)"
