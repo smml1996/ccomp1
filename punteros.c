@@ -41,7 +41,7 @@ char *str_copy(char *s, char*c, int n){
 int strend(char *s, char *t, int l1, int l2){
     t+=(l2-1);
     s+=(l1-1);
-    while(l2>=0){
+    while(l2>0){
         if(*s!=*t){
             return 0;
         }
