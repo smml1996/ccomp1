@@ -4,50 +4,37 @@ void to_lower(char *c){
     *c = ((*c)>='A' && (*c)<='Z')? (*c)+32:(*c);
 }
 
-char *str_cat(char *s, char*c){
-    char static result[1000];
-    int cont =0;
-    while(*s){
-        result[cont++]= *s;
+void str_cat(char *s, char*c){
+    while(*s!='\0'){
         s++;
     }
-    while(*c){
-        result[cont++]=*c;
-        c++;
+    for(;*c!='\0';c++,s++){
+        *s= *c;
     }
-    result[cont]='\0';
-    return &(result[0]);
 }
 
-char *str_copy(char *s, char*c, int n){
-    int cont =0;
-    static char m[100000];
-    while(*s){
-        m[cont++]= *s;
-        if(cont ==n)break;
+void str_copy(char *s, char*c, int n){
+    while(*s!='\0'){
         s++;
     }
-
-    if(cont<n){
-        while(*c){
-            m[cont++]=*c;
-            c++;
-            if(cont ==n)return;
-        }
+    int i = 0;
+    for(;*c != '\0' && i<n;s++,c++,i++){
+        *s=*c;
     }
-    return &(m[0]);
 }
 
-int strend(char *s, char *t, int l1, int l2){
-    t+=(l2-1);
-    s+=(l1-1);
-    while(l2>0){
-        if(*s!=*t){
-            return 0;
+int strend(char *s, char *t){
+    char *temp = t;
+
+    for(; *s!='\0';s++){
+        if(*s==*temp){
+            temp++;
+        }else{
+            s-=temp-t;
+            temp=t;
         }
-        s--; t--;l2--;
     }
-    return 1;
+    return ((*temp)=='\0'?1:0);
 }
 
 int a_toi(char *c){
@@ -59,32 +46,9 @@ int a_toi(char *c){
     }
     return result;
 }
-main(){
-/*
-    char m = 'J';
-    char *c= &m;
-    to_lower(c);
-    printf("%c",m);*/
+int main(){
 
-    char w[]="hola";
-    char p[]="asdnmf";
-
-    char *s= w; char *c=p;
-
-    int i = 0;
-    char *result =str_cat(s,c);
-    for(; *result!='\0';result++){
-        printf("%c", *result);
-    }
-
-/*
-
-    char c[]="1432";
-    char *m = &c[0];
-
-
-
-    printf("%d",a_toi(m));*/
-
-
+    char c[30] = "hello";
+    char s[] = "low";
+    printf("%d", strend(&c[0],&s[0]));
 }
