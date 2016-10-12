@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAXLINES 5000
+#define MAXLINES 1000
 #define MAXLINE 1000
 
 
-int  get_line(char m[5000][1000], int line){
+int  get_line(char m[MAXLINE][1000], int line){
     int i = 0;
     char c;
     char *c1 = &m[line][0];
@@ -17,7 +17,7 @@ int  get_line(char m[5000][1000], int line){
 }
 
 
-int get_lines(char m[5000][1000], char *p[]){
+int get_lines(char m[MAXLINE][1000], char *p[]){
     int i = 0;
     while(i<MAXLINES && get_line(m, i)>0){
         p[i]= &m[i]; i++;
@@ -58,7 +58,7 @@ void qsort(char *p[], int left, int right){
 }
 
 int main(){
-    int nlines =0; char *p[5000]; char inputs[5000][1000];
+    int nlines =0; char *p[MAXLINE]; char inputs[MAXLINE][1000];
     nlines = get_lines(inputs,p);
     qsort(p, 0, nlines-1);
     writelines(p,nlines-1);
