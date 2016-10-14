@@ -6,17 +6,6 @@ struct node{
     struct node *next;
 };
 
-void push_back(struct node *head, int valor){
-    struct node *last = malloc(sizeof(struct node));
-    last->val = valor;
-    last->next= NULL;
-    struct node *pp = head;
-    while((pp->next)!=NULL){
-        pp= pp->next;
-    }
-    pp->next = last;
-}
-
 void print_list(struct node *head){
     struct node * pp = head;
     while(pp!=NULL){
@@ -25,6 +14,42 @@ void print_list(struct node *head){
     }
 }
 
+struct node* create(struct node *head, int l, int values[]){
+    head = malloc(sizeof(struct node));
+    struct node  *p = head;int i = 0;
+    for( ;i<l-1; i++){
+       // printf("%d\n",values[i]);
+        p->val = values[i];
+        p->next = malloc(sizeof(struct node));
+        p=p->next;
+    }
+    p->val = values[i];
+    p->next = NULL;
+    return head;
+}
+
+void delete_node(struct node *head, int value){
+    struct node *prev= head;
+   while(head->val == value){
+        free(head);
+        *head= *(head->next);
+    }
+    struct node *cur = head->next;
+    while(cur->next!=NULL){
+        if(cur->val == value){
+            prev->next = cur->next;
+            free(cur);
+            cur=cur->next;
+        }else{
+            prev =cur;
+            cur=cur->next;}
+    }
+
+    if(cur->val==value){
+        prev->next=NULL;
+        free(cur);
+    }
+}
 void add_at(struct node *head, int val, int index){ //base 0
     struct node *pp = head;
     struct node *new_node = malloc(sizeof(struct node));
@@ -36,34 +61,56 @@ void add_at(struct node *head, int val, int index){ //base 0
         head->next= new_node;
         return;
     }
-    new_node -> val =val;
-    for(int i = 0; i<index;i++, pp=pp->next);
+    new_node -> val =val;int i = 0;
+    for(; i<index;i++, pp=pp->next);
     new_node->next = pp->next;
     pp->next = new_node;
 }
 
-void delete_node(struct node *head, int index){
-    if(index == 0){
-        *head= *(head->next);
+void push_back(struct node *head, int valor){
+    struct node *last = malloc(sizeof(struct node));
+    last->val = valor;
+    last->next= NULL;
+    struct node *pp = head;
+    while((pp->next)!=NULL){
+        pp= pp->next;
+    }
+    pp->next = last;
+}
+
+void sort_insert(struct node *head, int value){
+    struct node *p = head;
+    struct node *new_node = malloc(sizeof(struct node));
+    new_node->val = value;
+    if(p->val>=value){
+        add_at(head,value, 0);
         return;
     }
-    struct node *pp = head;
-    for(int i = 0; i<index-1; i++,pp= pp->next);
-    free(pp->next);
-    pp->next = pp->next->next;
-
-
+    while(p->next!=NULL){
+        if(p->val && p->next->val>value){
+            new_node ->next = p->next;
+            p->next = new_node;
+            return;
+        }
+        p= p->next;
+    }
+    p->next = new_node;
+    new_node->next=NULL;
 }
+
+void concatenate(struct node *head1, struct node *head2){
+    struct node *pp = head1;
+    while(pp->next!=NULL)pp=pp->next;
+    pp->next =head2;
+}
+
+
 int main(){
 
     struct node *head;
-    head = malloc(sizeof(struct node));
-    head -> val = 5;
-    head -> next =NULL;
-    //printf("%d", (*head).val);
-    push_back(head, 7);
-    add_at(head, 11, 0);
-    delete_node(head,0);
+    int values[5]= {1,2,3,4,5};
+    head = create(head, 5, values);
+    sort_insert(head, 1);
+    //delete_node(head, 2);
     print_list(head);
-return 0;
 }
