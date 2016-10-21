@@ -105,3 +105,7 @@ void PointArray::print_arr(){
 
 
 
+void PointArray::remove_arr(const int index){
+     Point *temp = *this->point;
+     
+}
