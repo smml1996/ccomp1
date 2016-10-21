@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1477026840 source:/home/smml1996/Documents/clasePunto/main.cpp
+	<iostream>
+	"arrPoints.h"
+
+1477022480 /home/smml1996/Documents/clasePunto/punto.h
+
+1477022574 source:/home/smml1996/Documents/clasePunto/punto.cpp
+	"punto.h"
+	<iostream>
+
+1477027026 source:/home/smml1996/Documents/clasePunto/arrPoints.cpp
+	"arrPoints.h"
+	<iostream>
+
+1477025002 /home/smml1996/Documents/clasePunto/arrPoints.h
+	"punto.h"
+
