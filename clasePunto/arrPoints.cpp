@@ -94,6 +94,8 @@ const int PointArray::get_size()const{
 
 void PointArray::clear_arr(){
     delete[] this->point;
+    this-> point= new Point[5];
+    this->s=0;
 }
 
 void PointArray::print_arr(){
@@ -106,6 +108,6 @@ void PointArray::print_arr(){
 
 
 void PointArray::remove_arr(const int index){
-     Point *temp = *this->point;
+     Point *temp = *(this->point);
      
 }
