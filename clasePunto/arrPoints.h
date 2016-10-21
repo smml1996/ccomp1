@@ -3,7 +3,7 @@
 class PointArray {
     private:
         int s;
-        Point *point;
+        Point *(point[]);
         bool realloc(int si);
     public:
         PointArray(const Point points[], const int s);
