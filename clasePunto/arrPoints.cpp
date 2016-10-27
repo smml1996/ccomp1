@@ -14,8 +14,8 @@ PointArray::PointArray(const Point points[], const int s){
 PointArray::PointArray(const PointArray &pv){
     this->point =  new Point[pv.get_size()+5];
     this->s = pv.get_size();
-    Point *temp = point;
-    Point *temp1 = pv.point;
+    Point *temp = this->point;
+    Point *temp1 = pv.get_p();
     for(int i = 0; i<pv.get_size(); i++,temp++, temp1++){
         *temp = *temp1;
     }
@@ -32,10 +32,15 @@ bool PointArray::realloc(const int s){
     return false;
 }
 
+void PointArray::clear_arr(){
+    delete[] this->point;
+
+    this->point = new Point[5];
+    this->s = 0;
+}
+
 void PointArray::push_b(const Point &p){
     Point *temp = this->point;
-
-
     if(!(temp+s)->isNull()){
         Point *temp0 = this->point;
         realloc(this->s+5);
@@ -74,7 +79,7 @@ void PointArray::insertar(const int index, const Point &p){
                 temp0->modifyPoint(p.getX(), p.getY());
             }
         }
-        delete [] temp;
+        delete[] temp;
         (this->s)++;
         return;
     }
@@ -92,10 +97,6 @@ const int PointArray::get_size()const{
     return this->s;
 }
 
-void PointArray::clear_arr(){
-    delete[] this->point;
-}
-
 void PointArray::print_arr(){
     Point *p = this->point;
     for(int i = 0; i<this->s; i++, p++){
@@ -103,5 +104,16 @@ void PointArray::print_arr(){
     }
 }
 
+void PointArray::remove_point(const int position){
+    Point *temp = this->point +position;
+    for(int i = 0; i<this->s-1;i++, temp++){
+        temp->modifyPoint((temp+1)->getX(),(temp+1)->getY());
+    }
+    this->s --;
+}
+
+Point * PointArray::get_p() const{
+    return this->point;
+}
 
 

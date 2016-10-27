@@ -1,26 +1,28 @@
-#include "punto.h"
+#if punto
+
+
+#endif
+
 #include <iostream>
-
+# include "punto.h"
 using namespace std;
-
-
 Point::Point(Point &p){
    (*this).x = p.x; (*this).y = p.y;
-    is_null = false;
+    this->is_null = false;
 }
 Point::Point(int x_, int y_){
     (*this).x = x_;
     (*this).y = y_;
-    is_null = false;
+    this->is_null = false;
 }
 Point::Point(){
     this->x = 0; this->y =0;
-    is_null = true;
+    this->is_null = true;
 }
- int Point::getX() const{
+ float Point::getX() const{
     return (*this).x;
 }
- int Point::getY() const{
+ float Point::getY() const{
     return this->y;
 }
 
@@ -46,3 +48,4 @@ void Point::flipNull(){
 bool Point::isNull(){
     return this->is_null;
 }
+
