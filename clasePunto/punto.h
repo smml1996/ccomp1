@@ -1,6 +1,6 @@
 class Point {
     private:
-        float x; float y; bool is_null;
+        float x; float y;
     public:
         Point();
         Point(int x, int y);
@@ -11,7 +11,4 @@ class Point {
         void setY(int y);
         void printPoint();
         void modifyPoint(int x, int y);
-        void flipNull();
-        bool isNull();
-
 };

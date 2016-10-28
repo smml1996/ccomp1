@@ -1,11 +1,9 @@
 #include "punto.h"
-
 class PointArray {
     private:
         int s;
         Point *point;
         bool realloc(int si);
-
     public:
         PointArray(const Point points[], const int s);
         PointArray(const PointArray &pv);
@@ -17,7 +15,5 @@ class PointArray {
         void print_arr();
         void remove_point(const int position);
         Point * get_p() const;
-
-
 };
 

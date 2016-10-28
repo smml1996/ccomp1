@@ -1,7 +1,7 @@
 #include "punto.h"
 class V {
     private:
-        Point first, second; bool is_null;
+        Point first, second;
     public:
         V();
         V(Point &first, Point &second);
@@ -11,8 +11,6 @@ class V {
         float getSecondPy() const;
         void changeFirstP(const Point &p);
         void changeSecondP(const Point &p);
-        void flipNull();
-        bool isNull();
         void changeVec(const Point &first, const Point &second);
         Point getFirstP();
         Point getSecondP();

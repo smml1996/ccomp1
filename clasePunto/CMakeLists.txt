@@ -8,6 +8,10 @@ set(SOURCE_FILES
     arrPoints.h
     arrVectors.cpp
     arrVectors.h
+    polygon.h
+    polygon.cpp
+    rectangle.h
+    rectangle.cpp
     main.cpp
     punto.cpp
     punto.h

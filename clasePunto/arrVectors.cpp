@@ -1,11 +1,11 @@
+#include  "arrVectors.h"
+
 #include <iostream>
 
 using namespace std;
-
-#include "arrVectors.h"
-
 arrVec::arrVec(const V vectors[], const int s){
-    this-> vec = new V[s+5];
+
+    this-> vec = new V[s];
     this-> s = s;
     V *temp = this->vec;
     for(int i = 0; i<s; i++, temp++){
@@ -14,7 +14,7 @@ arrVec::arrVec(const V vectors[], const int s){
 }
 
 arrVec::arrVec(const arrVec &pv){
-    this->vec =  new V[pv.get_size()+5];
+    this->vec =  new V[pv.get_size()];
     this->s = pv.get_size();
     V *temp = this->vec;
     V *temp1 = pv.get_p();
@@ -25,38 +25,30 @@ arrVec::arrVec(const arrVec &pv){
 
 arrVec::arrVec(){
     this-> s = 0;
-    this->vec = new V[5];
+    this->vec = new V[0];
 }
 
 bool arrVec::realloc(const int s){
-    this-> vec =  new V[s+5];
-    if(this->vec!=NULL)return true;
-    return false;
+    this-> vec =  new V[s];
+    return true;
 }
 
 void arrVec::clear_arr(){
     delete[] this->vec;
-    this->vec = new V[5];
+    this->vec = new V[0];
     this->s = 0;
 }
 
 void arrVec::push_b(V &p){
     V *temp = this->vec;
-    if(!(temp+s)->isNull()){
-        V *temp0 = this->vec;
-        this->realloc(this->s+5);
-        V *temp2 = this->vec;
-        for(int i = 0; i<s;i++,temp++, temp2++){
-            temp2->changeVec(temp->getFirstP(), temp->getSecondP());
-            temp2->flipNull();
-        }
-        temp2->changeVec(p.getFirstP(), p.getSecondP());
-        delete[] temp0;
-        (this->s)++;
-        return;
+    V *temp0 = this->vec;
+    this->realloc(this->s);
+    V *temp2 = this->vec;
+    for(int i = 0; i<s;i++,temp++, temp2++){
+        temp2->changeVec(temp->getFirstP(), temp->getSecondP());
     }
-    temp+=(this->s);
-    temp->changeVec(p.getFirstP(), p.getSecondP());
+    temp2->changeVec(p.getFirstP(), p.getSecondP());
+    delete[] temp0;
     (this->s)++;
 }
 
@@ -68,8 +60,7 @@ void arrVec::insertar(const int index, V &p){
     }
     V *temp = this->vec;
 
-    if(!(temp+s)->isNull()){
-        realloc(this->s+5);
+        realloc(this->s);
         V *temp2 = temp;
         V *temp0 = this->vec;
         for(int i = 0; i<s+1; i++, temp0++){
@@ -82,16 +73,6 @@ void arrVec::insertar(const int index, V &p){
         }
         delete[] temp;
         (this->s)++;
-        return;
-    }
-    V *temp1 = temp;
-    temp1+= (this->s)-1;
-    int i = (this->s)-1;
-    for(; i>=index; i--,temp1--){
-        (temp1+1)->changeVec(temp1->getFirstP(), temp1->getSecondP());
-    }
-    (temp+i+1)->changeVec(p.getFirstP(), p.getSecondP());
-    (this->s)++;
 }
 
 const int arrVec::get_size()const{
@@ -116,5 +97,7 @@ void arrVec::remove_vec(const int position){
 V * arrVec::get_p() const{
     return this->vec;
 }
+
+
 
 

@@ -1,14 +1,12 @@
-# include "vector2.h"
+#include "vector2.h"
 V::V(){
     this->first = Point();
     this->second = Point();
-    is_null = true;
 }
 
 V::V(Point &f, Point &s){
     this->first = Point(f);
     this->second = Point(s);
-    is_null = false;
 }
 
 float V::getFirstPx() const{
@@ -31,13 +29,6 @@ void V::changeFirstP(const Point &p){
 
 void V::changeSecondP(const Point &p){
     (this->second).modifyPoint(p.getX(), p.getY());
-}
-
-void V::flipNull(){
-    this->is_null = !this->is_null;
-}
-bool V::isNull(){
-    return this->is_null;
 }
 
 void V::changeVec(const Point &f, const Point &s){
