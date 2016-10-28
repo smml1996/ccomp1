@@ -6,7 +6,7 @@
 
 using namespace std;
 
-bool less_t_5(int n) return n<5;
+bool less_t_5(int n){ return n<5;}
 int main(){
     vector<int> v(4,100);
     vector<int> v2(3,7);
@@ -18,7 +18,7 @@ int main(){
     stack<int> sck;
     queue<int> q;
     for(int i = 0; i<4; i++){ q.push(i);
-    lista2.push_back(i); sck.push(i)}
+    lista2.push_back(i); sck.push(i);}
     cout<<"la cola contiene "<<q.size()<<" elementos"<<endl;
     cout<<"el ultimo elemento de la cola es: "<<q.back()<<endl;
     while(!q.empty()){
@@ -46,23 +46,25 @@ int main(){
     v.assign(7,100); //asigna nuevo contenido al vector en este caso 7 cienes
 
     int *p = v.data(); // p es un puntero al primer elemento del vector
-    cout<<v.back()<<endl //muetra en pantalla el ultimo elemento del vector
-     cout<<v.front()<<endl//muetra en pantalla el primer elemento del vector
+    cout<<v.back()<<endl; //muetra en pantalla el ultimo elemento del vector
+     cout<<v.front()<<endl;//muetra en pantalla el primer elemento del vector
      cout<<v.at(0)<<endl; //muestra tambien el primer elemento del vector, el indice se especifica en el parametro
 
     v.resize(1); //elimina todos lo elementos hasta quedarse con uno
     v.capacity();//muestra cuantos elementos puede contener hasta el momento
-    cout<<v.empty()<<endl //imprime 0, el vector tiene un elemento
+    cout<<v.empty()<<endl; //imprime 0, el vector tiene un elemento
     v.reserve(100);// se hace un pedido para que el vector pueda contener por lo menos 100 elementos, si se puede
                     // se hace un cambio de direccion de memoria con la nueva continua que pueda almacenar 100 elementos
     cout<<endl;
-    lista.splice(lista.begin()+1,lista2); //lista : 7 0 1 2 3 7 7
+    list<int>::iterator it = lista.begin();
+    it++;
+    lista.splice(it,lista2); //lista : 7 0 1 2 3 7 7
 
     lista.remove(7); //elimina todos los 7's de la lista
     lista.remove_if(less_t_5); //elimina los elementos menores a 5
     lista.push_back(7);lista.push_back(7);
     lista.push_back(7); lista.push_back(7); lista.push_back(7);
-    lista.unique()//elimina elementos repetidos
+    lista.unique();//elimina elementos repetidos
 
 
     lista.clear(); lista2.clear();
@@ -79,6 +81,9 @@ int main(){
     lista.sort(); //lista es denuevo 0 1 2 3 4
 
     //STACK
-    while(!sck.empty())cout<<sck.top()<<" ";
+    while(!sck.empty()){
+        cout<<sck.top()<<" " ;
+        sck.pop();
+        }
     // 3 2 1 0
 }
