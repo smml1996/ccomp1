@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1479194797 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/main.cpp
+	<iostream>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	"super_peach.h"
+	"enermy.h"
+
+1479166702 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/inicializar.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<iostream>
+
+1479166480 /home/smml1996/Documents/tareas/cc_1/peach_inv/inicializar.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<iostream>
+
+1479178828 /home/smml1996/Documents/tareas/cc_1/peach_inv/super_peach.h
+	<allegro5/allegro.h>
+
+1479183854 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/super_peach.cpp
+	"super_peach.h"
+	<iostream>
+
+1479192593 /home/smml1996/Documents/tareas/cc_1/peach_inv/weapon.h
+	<allegro5/allegro.h>
+	<string>
+
+1479192565 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/weapon.cpp
+	"weapon.h"
+	<iostream>
+
+1479194860 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/enemy.cpp
+	"enermy.h"
+	<iostream>
+
+1479194107 /home/smml1996/Documents/tareas/cc_1/peach_inv/enermy.h
+	<allegro5/allegro.h>
+	<vector>
+	"weapon.h"
+
