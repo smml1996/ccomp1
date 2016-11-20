@@ -25,7 +25,7 @@ int &Weapon::get_num_weapons(){
 bool Weapon::move_weapon(const ALLEGRO_MONITOR_INFO &info){
     al_destroy_bitmap(img);
     img = al_load_bitmap("img/horn.png");
-    x+=5;
+    x+=10;
     if(x>=info.x2){
         return false;
     }

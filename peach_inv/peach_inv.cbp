@@ -48,6 +48,7 @@
 		</Compiler>
 		<Unit filename="enemy.cpp" />
 		<Unit filename="enermy.h" />
+		<Unit filename="fonts/Starfish.ttf" />
 		<Unit filename="img/enemigo.png" />
 		<Unit filename="img/enemigo2.png" />
 		<Unit filename="img/galaxy.jpg" />

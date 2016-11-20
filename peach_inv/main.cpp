@@ -1,26 +1,35 @@
 #include <iostream>
+#include <string.h>
 #include <vector>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include "allegro5/allegro_image.h"
 #include "allegro5/allegro_native_dialog.h"
+#include "allegro5/allegro_font.h"
+#include "allegro5/allegro_ttf.h"
 #include "super_peach.h"
 #include "enermy.h"
 #define FPS 30.0
+#define ALPHA 0.5f
 using namespace std;
 
 enum keys {
     KEY_UP, KEY_DOWN, KEY_SPACE
 };
-
+char* puntos = "Puntos: 0";
+char* monedas = "Coins : 0";
+int score = 0;
+//int c = 0;
 int main(int argc, char **argv){
 
 //variables
+
     ALLEGRO_DISPLAY *display = NULL;
     ALLEGRO_EVENT_QUEUE *event_queue = NULL;
     ALLEGRO_TIMER *timer = NULL;
     ALLEGRO_MONITOR_INFO info;
     ALLEGRO_BITMAP  *image   = NULL;
+
     vector<Weapon *> weapons;
     bool wanna_exit= false;
     bool key[3]={false,false, false};
@@ -32,7 +41,10 @@ int main(int argc, char **argv){
         cerr<<"no se pudo inicializar allegro"<<endl;
         return -1;
     }
+    al_init_font_addon();
+    al_init_ttf_addon();
     al_install_keyboard();
+    ALLEGRO_FONT *font = al_load_ttf_font("fonts/Starfish.ttf",72,0);
     timer = al_create_timer(1.0 / FPS);
     if(!timer) {
       cerr<< "failed to create timer!\n"<<endl;
@@ -49,6 +61,7 @@ int main(int argc, char **argv){
                                  NULL, ALLEGRO_MESSAGEBOX_ERROR);
       return 0;
     }
+
     image = al_load_bitmap("img/galaxy.jpg");
     Pitchie p(info);
     if(!image) {
@@ -64,12 +77,16 @@ int main(int argc, char **argv){
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
+vector_enemigos v_e(0, info);
+
     al_flip_display();
     al_start_timer(timer);
-    poni_arcoiris p_a(info.x2-100, 30,0);
+    bool is_poni_arc =1;
+
 //***********************************************************
 
     while(!wanna_exit){
+
         ALLEGRO_EVENT ev;
         al_wait_for_event(event_queue, &ev);
 
@@ -126,22 +143,33 @@ int main(int argc, char **argv){
       }
      al_clear_to_color(al_map_rgb(0,0,0));
 
+
      al_draw_bitmap(image,0,0,0);
-     p.redraw();p_a.move_enemy("img/enemigo2.png");
-     for(int i = 0; i<weapons.size();i++){
-        if(!(weapons[i]->move_weapon(info))){
+     p.redraw();
+
+     ALLEGRO_COLOR color = al_map_rgba_f(1.0*ALPHA, 0.4*ALPHA, 0.6*ALPHA, ALPHA);
+    al_draw_text(font, color, info.x2/2,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, strstr(puntos,score));
+    al_draw_text(font, color, info.x2/2,info.y2/2,ALLEGRO_ALIGN_CENTRE, monedas);
+     v_e.move_enemies();
+
+     for(unsigned int i = 0; i<weapons.size();i++){
+        if(!(weapons[i]->move_weapon(info)) ||v_e.check_collision(weapons[i]->get_x(), weapons[i]->get_y())){
             delete weapons[i];
             weapons.erase(weapons.begin()+i);
             Weapon::get_num_weapons()--;
+            score++;
+
         }
      }
-     al_flip_display();
-    }
 
+     al_flip_display();
+     if(v_e.is_empty_()){
+        v_e.refill(is_poni_arc,info);
+        is_poni_arc = !is_poni_arc;
+     }
+    }
    al_destroy_timer(timer);
    al_destroy_display(display);
-
    al_destroy_event_queue(event_queue);
-
     return 0;
 }
