@@ -75,16 +75,17 @@ vector_enemigos::vector_enemigos(const bool &is_arcoriris, const ALLEGRO_MONITOR
     }
 }
 
-void vector_enemigos::move_enemies(){
+bool vector_enemigos::move_enemies(){
     for(int i = 0; i<popoponies.size();i++){
         popoponies[i]->move_enemy();
         if(popoponies[i]->get_x() ==0){
             Enemy * temp = popoponies[i];
             popoponies.erase(popoponies.begin()+i);
             delete temp;
-
+            return true;
         }
     }
+    return false;
 }
 
 bool vector_enemigos::check_collision(const unsigned int &x, const unsigned int &y){

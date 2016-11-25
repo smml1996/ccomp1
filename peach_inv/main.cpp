@@ -9,7 +9,7 @@
 #include "allegro5/allegro_ttf.h"
 #include "super_peach.h"
 #include "enermy.h"
-#define FPS 30.0
+#define FPS 20.0
 #define ALPHA 0.5f
 using namespace std;
 
@@ -52,6 +52,8 @@ int main(int argc, char **argv){
     }
     al_get_monitor_info(0,&info);
     display = al_create_display(info.x2, info.y2);
+    ALLEGRO_COLOR color = al_map_rgba_f(1.0*ALPHA, 0.4*ALPHA, 0.6*ALPHA, ALPHA);
+    ALLEGRO_COLOR cleanColor = al_map_rgb(0,0,0);
     if(!display){
         cerr<<"no se pudo configurar la pantalla"<<endl;
         return -1;
@@ -63,7 +65,8 @@ int main(int argc, char **argv){
     }
 
     image = al_load_bitmap("img/galaxy.jpg");
-    Pitchie p(info);
+    char *j = "img/pony_vida_5.png";
+    Pitchie p(info,j);
     if(!image) {
       al_show_native_message_box(display, "Error", "Error", "Failed to load image!",
                                  NULL, ALLEGRO_MESSAGEBOX_ERROR);
@@ -86,8 +89,8 @@ vector_enemigos v_e(0, info);
 //***********************************************************
 
     while(!wanna_exit){
-
         ALLEGRO_EVENT ev;
+
         al_wait_for_event(event_queue, &ev);
 
         if(ev.type == ALLEGRO_EVENT_TIMER) {
@@ -141,27 +144,26 @@ vector_enemigos v_e(0, info);
                 break;
          }
       }
-     al_clear_to_color(al_map_rgb(0,0,0));
-
-
+       al_clear_to_color(cleanColor);
      al_draw_bitmap(image,0,0,0);
      p.redraw();
 
-     ALLEGRO_COLOR color = al_map_rgba_f(1.0*ALPHA, 0.4*ALPHA, 0.6*ALPHA, ALPHA);
-    al_draw_text(font, color, info.x2/2,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, strstr(puntos,score));
-    al_draw_text(font, color, info.x2/2,info.y2/2,ALLEGRO_ALIGN_CENTRE, monedas);
-     v_e.move_enemies();
 
+    al_draw_text(font, color, info.x2/2,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, puntos);
+    al_draw_text(font, color, info.x2/2,info.y2/2,ALLEGRO_ALIGN_CENTRE, monedas);
+    if(v_e.move_enemies()){
+        p.take_damage();
+    }
      for(unsigned int i = 0; i<weapons.size();i++){
         if(!(weapons[i]->move_weapon(info)) ||v_e.check_collision(weapons[i]->get_x(), weapons[i]->get_y())){
             delete weapons[i];
             weapons.erase(weapons.begin()+i);
             Weapon::get_num_weapons()--;
+
             score++;
 
         }
      }
-
      al_flip_display();
      if(v_e.is_empty_()){
         v_e.refill(is_poni_arc,info);

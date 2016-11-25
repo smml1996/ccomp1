@@ -4,7 +4,7 @@
 using namespace std;
 int Weapon::actual_weapons = 0;
 Weapon::Weapon(int x, int y, const char *path){
-    img = al_load_bitmap(path);
+    img = al_load_bitmap("img/horn.png");
     al_draw_bitmap(img,x,y,20);
     this->x = x; this->y = y;
     actual_weapons++;

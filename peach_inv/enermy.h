@@ -1,7 +1,6 @@
 #include <allegro5/allegro.h>
 #include <vector>
 #include "weapon.h"
-
 using namespace std;
 class Enemy{
 protected:
@@ -44,7 +43,7 @@ class vector_enemigos{
     vector< Enemy * > popoponies;
     public:
         vector_enemigos(const bool &is_arcoiris, const ALLEGRO_MONITOR_INFO &info);
-        void move_enemies();
+        bool move_enemies();
         bool check_collision(const unsigned int &x,const unsigned int &y);
         bool is_empty_();
         void refill(const bool &is_poni_arcoiris, const ALLEGRO_MONITOR_INFO &info);
