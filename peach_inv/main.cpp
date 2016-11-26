@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string.h>
+#include<string>
+#include <sstream>
 #include <vector>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
@@ -9,26 +11,36 @@
 #include "allegro5/allegro_ttf.h"
 #include "super_peach.h"
 #include "enermy.h"
+#include "coins.h"
 #define FPS 20.0
 #define ALPHA 0.5f
+
 using namespace std;
 
 enum keys {
     KEY_UP, KEY_DOWN, KEY_SPACE
 };
-char* puntos = "Puntos: 0";
-char* monedas = "Coins : 0";
+int puntos = 0;
+Coins monedas;
+Coins incremento(5);
 int score = 0;
 //int c = 0;
+string to_string(int i)
+{
+    std::stringstream ss;
+    ss << i;
+    return ss.str();
+}
 int main(int argc, char **argv){
 
-//variables
-
+    //variables
     ALLEGRO_DISPLAY *display = NULL;
     ALLEGRO_EVENT_QUEUE *event_queue = NULL;
     ALLEGRO_TIMER *timer = NULL;
     ALLEGRO_MONITOR_INFO info;
     ALLEGRO_BITMAP  *image   = NULL;
+
+    bool is_weapon;
 
     vector<Weapon *> weapons;
     bool wanna_exit= false;
@@ -90,21 +102,14 @@ vector_enemigos v_e(0, info);
 
     while(!wanna_exit){
         ALLEGRO_EVENT ev;
-
         al_wait_for_event(event_queue, &ev);
-
         if(ev.type == ALLEGRO_EVENT_TIMER) {
          if(key[KEY_UP]) {
             p.change_position(true,info);
-
          }
          if(key[KEY_DOWN]) {
             p.change_position(false,info);
-
-         }if(key[KEY_SPACE]){
-
-         }
-
+         }if(key[KEY_SPACE]);
       }
       else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
          break;
@@ -114,7 +119,6 @@ vector_enemigos v_e(0, info);
             case ALLEGRO_KEY_UP:
                key[KEY_UP] = true;
                break;
-
             case ALLEGRO_KEY_DOWN:
                key[KEY_DOWN] = true;
                break;
@@ -128,30 +132,32 @@ vector_enemigos v_e(0, info);
             case ALLEGRO_KEY_UP:
                key[KEY_UP] = false;
                break;
-
             case ALLEGRO_KEY_DOWN:
                key[KEY_DOWN] = false;
                break;
-
             case ALLEGRO_KEY_ESCAPE:
                wanna_exit = true;
                break;
             case ALLEGRO_KEY_SPACE:
                 key[KEY_SPACE]=false;
                 if(Weapon::get_num_weapons()<10){
-                weapons.push_back(new Weapon(p.get_x()+70,p.get_y()+10, "img/peach.png"));
-            }
+                    weapons.push_back(new Weapon(p.get_x()+70,p.get_y()+10, "img/horn.png"));
+                }
                 break;
          }
       }
-       al_clear_to_color(cleanColor);
+     al_clear_to_color(cleanColor);
      al_draw_bitmap(image,0,0,0);
      p.redraw();
-
-
-    al_draw_text(font, color, info.x2/2,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, puntos);
-    al_draw_text(font, color, info.x2/2,info.y2/2,ALLEGRO_ALIGN_CENTRE, monedas);
-    if(v_e.move_enemies()){
+     string ps = to_string(puntos);
+     string cs = to_string(monedas.get_value());
+     char const *pchar = ps.c_str();
+     char const *cchar = cs.c_str();
+    al_draw_text(font, color, info.x2/2,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, "Puntos: ");
+    al_draw_text(font, color, (info.x2/2)+170,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, pchar);
+    al_draw_text(font, color, info.x2/2,info.y2/2,ALLEGRO_ALIGN_CENTRE, cchar);
+    al_draw_text(font, color, info.x2/2+100,info.y2/2,ALLEGRO_ALIGN_CENTRE, "$");
+    if(v_e.move_enemies(p.get_x(),p.get_y())){
         p.take_damage();
     }
      for(unsigned int i = 0; i<weapons.size();i++){
@@ -159,9 +165,8 @@ vector_enemigos v_e(0, info);
             delete weapons[i];
             weapons.erase(weapons.begin()+i);
             Weapon::get_num_weapons()--;
-
-            score++;
-
+            puntos+=10;
+            monedas = monedas +incremento;
         }
      }
      al_flip_display();

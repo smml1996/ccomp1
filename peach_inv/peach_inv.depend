@@ -45,11 +45,11 @@
 	<vector>
 	"weapon.h"
 
-1480045880 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enemy.cpp
+1480130894 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enemy.cpp
 	"enermy.h"
 	<iostream>
 
-1480037987 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enermy.h
+1480130271 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enermy.h
 	<allegro5/allegro.h>
 	<vector>
 	"weapon.h"
@@ -279,13 +279,17 @@
 
 1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\alcompat.h
 
-1480037987 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.h
+1480127701 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.h
 	<allegro5/allegro.h>
 	<string>
+	<stdlib.h>
+	<time.h>
 
-1480045991 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\main.cpp
+1480132584 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\main.cpp
 	<iostream>
 	<string.h>
+	<string>
+	<sstream>
 	<vector>
 	<allegro5/allegro.h>
 	<allegro5/allegro_primitives.h>
@@ -311,14 +315,21 @@
 	"allegro5/allegro.h"
 	"allegro5/allegro_font.h"
 
-1480046709 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.h
+1480135507 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.h
 	<allegro5/allegro.h>
 
-1480043248 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.cpp
+1480134304 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.cpp
 	"super_peach.h"
 	<iostream>
 
-1480039560 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.cpp
+1480125562 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.cpp
 	"weapon.h"
+	<iostream>
+
+1480137673 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.cpp
+	"coins.h"
+	<string>
+
+1480137663 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.h
 	<iostream>
 

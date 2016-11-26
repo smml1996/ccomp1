@@ -2,6 +2,7 @@
 class Pitchie {
     ALLEGRO_BITMAP *pitchie_img;
     char *img;
+    unsigned int puntos;
     bool is_shooting;
     short vidas;
     void flip_superpower();

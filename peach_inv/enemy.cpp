@@ -28,7 +28,7 @@ void Enemy::update_hit(){
 }
 poni_arcoiris::poni_arcoiris(int x, int y, const char *path): Enemy(x,y,path){}
 
-void poni_arcoiris::move_enemy(){
+bool poni_arcoiris::move_enemy(const int &x1, const int &y1){
     if(up){
         y+=5;
         up=false;
@@ -41,16 +41,43 @@ void poni_arcoiris::move_enemy(){
     al_destroy_bitmap(img_enemy);
     img_enemy = al_load_bitmap(path);
     al_draw_bitmap(img_enemy,x,y,0);
+    return false;
 }
 
 poni_rudo_weapon::poni_rudo_weapon(int x, int y, const char * path):Weapon(x,y,path){}
 
-poni_rudo::poni_rudo(int x, int y, const char *path):Enemy(x,y, path){}
+poni_rudo::poni_rudo(int x, int y, const char *path):Enemy(x,y, path){srand (time(NULL));}
 
-void poni_rudo::move_enemy(){
+
+bool poni_rudo_weapon::move_weapon(){
+    al_destroy_bitmap(img);
+    img = al_load_bitmap(path);
+    x-=10;
+    if(x<=0){
+        return false;
+    }
+    al_draw_bitmap(img,x,y,0);
+    return true;
+}
+
+bool poni_rudo::move_enemy(const int &x1, const int &y1){
+
+    for(int i = 0; i<nubes.size(); i++ ){
+        nubes[i]->move_weapon();
+        if(nubes[i]->get_x()>=x1-30 && nubes[i]->get_x()<=x1+30  && nubes[i]->get_y()>=y1-90 && nubes[i]->get_y()<=y1+90){
+            delete nubes[i];
+            nubes.erase(nubes.begin()+i);
+            return true;
+        }
+    }
     if(up){
         y+=5;
         up=false;
+        if(rand() %50==7){
+            if(nubes.size()<5){
+                nubes.push_back(new poni_rudo_weapon(x,y,"img/weapon_enemy.png"));
+            }
+        }
     }else{
         y-=5;
         up=true;
@@ -60,6 +87,7 @@ void poni_rudo::move_enemy(){
     al_destroy_bitmap(img_enemy);
     img_enemy = al_load_bitmap(path);
     al_draw_bitmap(img_enemy,x,y,0);
+    return false;
 }
 
 vector_enemigos::vector_enemigos(const bool &is_arcoriris, const ALLEGRO_MONITOR_INFO &info){
@@ -75,9 +103,9 @@ vector_enemigos::vector_enemigos(const bool &is_arcoriris, const ALLEGRO_MONITOR
     }
 }
 
-bool vector_enemigos::move_enemies(){
+bool vector_enemigos::move_enemies(const int &x1, const int &y1){
     for(int i = 0; i<popoponies.size();i++){
-        popoponies[i]->move_enemy();
+        if(popoponies[i]->move_enemy(x1,y1))return true;
         if(popoponies[i]->get_x() ==0){
             Enemy * temp = popoponies[i];
             popoponies.erase(popoponies.begin()+i);
@@ -104,7 +132,7 @@ bool vector_enemigos::is_empty_(){
 }
 
 void vector_enemigos::refill(const bool &is_poni_arcoiris, const ALLEGRO_MONITOR_INFO &info){
-    int i = 4; int space= 20;
+    int i = 5; int space= 20;
     while(i--){
         if(is_poni_arcoiris){
             popoponies.push_back(new poni_arcoiris(info.x2-200, space, "img/enemigo.png"));
