@@ -16,6 +16,6 @@ class Pitchie {
         int get_x();
         int get_y();
         int get_vidas();
-        void take_damage();
+        void take_damage(bool &exit);
         void redraw();
 };

@@ -73,8 +73,8 @@ bool poni_rudo::move_enemy(const int &x1, const int &y1){
     if(up){
         y+=5;
         up=false;
-        if(rand() %50==7){
-            if(nubes.size()<5){
+        if(rand() %14==7){
+            if(nubes.size()<2){
                 nubes.push_back(new poni_rudo_weapon(x,y,"img/weapon_enemy.png"));
             }
         }
@@ -91,7 +91,7 @@ bool poni_rudo::move_enemy(const int &x1, const int &y1){
 }
 
 vector_enemigos::vector_enemigos(const bool &is_arcoriris, const ALLEGRO_MONITOR_INFO &info){
-    int i = 5; int space= 20;
+    int i = 3; int space= 20;
     while(i--){
         if(is_arcoriris){
             popoponies.push_back(new poni_arcoiris(info.x2-200, space, "img/enemigo.png"));
@@ -132,7 +132,7 @@ bool vector_enemigos::is_empty_(){
 }
 
 void vector_enemigos::refill(const bool &is_poni_arcoiris, const ALLEGRO_MONITOR_INFO &info){
-    int i = 5; int space= 20;
+    int i = 3; int space= 20;
     while(i--){
         if(is_poni_arcoiris){
             popoponies.push_back(new poni_arcoiris(info.x2-200, space, "img/enemigo.png"));

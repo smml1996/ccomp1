@@ -17,39 +17,18 @@
 				</Compiler>
 				<Linker>
 					<Add option="-static-libstdc++" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_acodec-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_audio-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/libvorbisfile-1.3.2-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_color-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_dialog-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_font-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_image-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_memfile-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_physfs-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_primitives-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/liballegro_ttf-5.0.10-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/libdumb-0.9.3-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/libFLAC-1.2.1-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/libfreetype-2.4.8-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/libogg-1.2.1-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/libzlib-1.2.5-static-mt.a" />
-					<Add library="I:/allegro-5.0.10-mingw-4.5.0/lib/libopenal-1.14-static-mt.a" />
-					<Add library="C:/MinGW/lib/libgdiplus.a" />
-					<Add library="C:/MinGW/lib/libuuid.a" />
-					<Add library="C:/MinGW/lib/libkernel32.a" />
-					<Add library="C:/MinGW/lib/libwinmm.a" />
-					<Add library="C:/MinGW/lib/libpsapi.a" />
-					<Add library="C:/MinGW/lib/libopengl32.a" />
-					<Add library="C:/MinGW/lib/libglu32.a" />
-					<Add library="C:/MinGW/lib/libuser32.a" />
-					<Add library="C:/MinGW/lib/libcomdlg32.a" />
-					<Add library="C:/MinGW/lib/libgdi32.a" />
-					<Add library="C:/MinGW/lib/libshell32.a" />
-					<Add library="C:/MinGW/lib/libole32.a" />
-					<Add library="C:/MinGW/lib/libadvapi32.a" />
-					<Add library="C:/MinGW/lib/libws2_32.a" />
-					<Add library="C:/MinGW/lib/libshlwapi.a" />
+					<Add library="/usr/lib/liballegro.so" />
+					<Add library="/usr/lib/liballegro_acodec.so" />
+					<Add library="/usr/lib/liballegro_audio.so" />
+					<Add library="/usr/lib/liballegro_color.so" />
+					<Add library="/usr/lib/liballegro_dialog.so" />
+					<Add library="/usr/lib/liballegro_font.so" />
+					<Add library="/usr/lib/liballegro_image.so" />
+					<Add library="/usr/lib/liballegro_main.so" />
+					<Add library="/usr/lib/liballegro_memfile.so" />
+					<Add library="/usr/lib/liballegro_physfs.so" />
+					<Add library="/usr/lib/liballegro_primitives.so" />
+					<Add library="/usr/lib/liballegro_ttf.so" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -69,11 +48,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="coins.cpp" />
+		<Unit filename="coins.h" />
 		<Unit filename="enemy.cpp" />
 		<Unit filename="enermy.h" />
 		<Unit filename="fonts/Starfish.ttf" />
 		<Unit filename="img/enemigo.png" />
 		<Unit filename="img/enemigo2.png" />
+		<Unit filename="img/final_pic.png" />
 		<Unit filename="img/galaxy.jpg" />
 		<Unit filename="img/horn.png" />
 		<Unit filename="img/peach.png" />
@@ -84,7 +66,9 @@
 		<Unit filename="img/pony_vida_4.png" />
 		<Unit filename="img/pony_vida_5.png" />
 		<Unit filename="img/weapon_enemy.png" />
+		<Unit filename="inicia.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="sounds/game_over.wav" />
 		<Unit filename="super_peach.cpp" />
 		<Unit filename="super_peach.h" />
 		<Unit filename="weapon.cpp" />

@@ -17,10 +17,10 @@ void Pitchie::flip_superpower(){ super_power !=super_power;}
 
 ALLEGRO_BITMAP *Pitchie::get_image(){return pitchie_img;}
 
-void Pitchie::take_damage(){
+void Pitchie::take_damage(bool &exit){
     vidas--;
     if(vidas <= 0){
-        cout<<"Termino el juego"<<endl;
+        exit = true;
     }else{
         switch(vidas){
             case 1:

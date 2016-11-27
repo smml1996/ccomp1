@@ -8,7 +8,6 @@ Weapon::Weapon(int x, int y, const char *path){
     img = al_load_bitmap(path);
     al_draw_bitmap(img,x,y,20);
     this->x = x; this->y = y;
-    actual_weapons++;
 }
 
 int Weapon::get_x(){
