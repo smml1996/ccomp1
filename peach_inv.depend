@@ -1,0 +1,404 @@
+# depslib dependency file v1.0
+1479432410 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/main.cpp
+	<iostream>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	"allegro5/allegro_font.h"
+	"allegro5/allegro_ttf.h"
+	"super_peach.h"
+	"enermy.h"
+
+1479166702 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/inicializar.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<iostream>
+
+1479166480 /home/smml1996/Documents/tareas/cc_1/peach_inv/inicializar.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<iostream>
+
+1479178828 /home/smml1996/Documents/tareas/cc_1/peach_inv/super_peach.h
+	<allegro5/allegro.h>
+
+1479427408 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/super_peach.cpp
+	"super_peach.h"
+	<iostream>
+
+1479192593 /home/smml1996/Documents/tareas/cc_1/peach_inv/weapon.h
+	<allegro5/allegro.h>
+	<string>
+
+1479426216 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/weapon.cpp
+	"weapon.h"
+	<iostream>
+
+1479428252 source:/home/smml1996/Documents/tareas/cc_1/peach_inv/enemy.cpp
+	"enermy.h"
+	<iostream>
+
+1479386427 /home/smml1996/Documents/tareas/cc_1/peach_inv/enermy.h
+	<allegro5/allegro.h>
+	<vector>
+	"weapon.h"
+
+1480130894 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enemy.cpp
+	"enermy.h"
+	<iostream>
+
+1480130271 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enermy.h
+	<allegro5/allegro.h>
+	<vector>
+	"weapon.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro.h
+	"allegro5/base.h"
+	"allegro5/altime.h"
+	"allegro5/bitmap.h"
+	"allegro5/bitmap_draw.h"
+	"allegro5/bitmap_io.h"
+	"allegro5/bitmap_lock.h"
+	"allegro5/blender.h"
+	"allegro5/color.h"
+	"allegro5/config.h"
+	"allegro5/debug.h"
+	"allegro5/display.h"
+	"allegro5/drawing.h"
+	"allegro5/error.h"
+	"allegro5/events.h"
+	"allegro5/file.h"
+	"allegro5/fixed.h"
+	"allegro5/fmaths.h"
+	"allegro5/fshook.h"
+	"allegro5/fullscreen_mode.h"
+	"allegro5/joystick.h"
+	"allegro5/keyboard.h"
+	"allegro5/memory.h"
+	"allegro5/monitor.h"
+	"allegro5/mouse.h"
+	"allegro5/mouse_cursor.h"
+	"allegro5/path.h"
+	"allegro5/system.h"
+	"allegro5/threads.h"
+	"allegro5/timer.h"
+	"allegro5/tls.h"
+	"allegro5/transformations.h"
+	"allegro5/utf8.h"
+	"allegro5/alcompat.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\base.h
+	<errno.h>
+	<limits.h>
+	<limits.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<sys/types.h>
+	<fortify/fortify.h>
+	<dmalloc.h>
+	"allegro5/internal/alconfig.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\internal\alconfig.h
+	"allegro5/platform/alplatf.h"
+	"allegro5/platform/alwatcom.h"
+	"allegro5/platform/almngw32.h"
+	"allegro5/platform/albcc32.h"
+	"allegro5/platform/almsvc.h"
+	"allegro5/platform/aliphonecfg.h"
+	"allegro5/platform/alosxcfg.h"
+	"allegro5/platform/alucfg.h"
+	"allegro5/platform/astdint.h"
+	"allegro5/platform/astdbool.h"
+
+1372647528 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alplatf.h
+
+1368987908 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alwatcom.h
+	<io.h>
+	<i86.h>
+	<conio.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1368987908 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\almngw32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1368987908 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\albcc32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1368987908 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\almsvc.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\aliphonecfg.h
+	<fcntl.h>
+	<unistd.h>
+
+1368987908 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alosxcfg.h
+	"allegro5/platform/alplatf.h"
+
+1368987908 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alucfg.h
+	<fcntl.h>
+	<unistd.h>
+	"alunix.h"
+	"allegro5/platform/alplatf.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alunix.h
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\astdint.h
+	<inttypes.h>
+	<stdint.h>
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\astdbool.h
+	<stdbool.h>
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\altime.h
+	"allegro5/base.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap.h
+	"allegro5/color.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\color.h
+	"allegro5/base.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap_draw.h
+	"allegro5/bitmap.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap_io.h
+	"allegro5/bitmap.h"
+	"allegro5/file.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\file.h
+	"allegro5/base.h"
+	"allegro5/path.h"
+	"allegro5/utf8.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\path.h
+	"allegro5/base.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\utf8.h
+	"allegro5/base.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap_lock.h
+	"allegro5/bitmap.h"
+
+1372646284 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\blender.h
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\config.h
+	"allegro5/file.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\debug.h
+	<assert.h>
+	"allegro5/base.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\display.h
+	"allegro5/bitmap.h"
+	"allegro5/color.h"
+	"allegro5/events.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\events.h
+	"allegro5/altime.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\drawing.h
+	"allegro5/color.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\error.h
+	"allegro5/base.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\fixed.h
+	"allegro5/base.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\fmaths.h
+	"allegro5/base.h"
+	"allegro5/fixed.h"
+	"allegro5/inline/fmaths.inl"
+
+1368987908 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\inline\fmaths.inl
+	"allegro5/error.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\fshook.h
+	"allegro5/base.h"
+	"allegro5/file.h"
+	"allegro5/path.h"
+	<sys/types.h>
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\fullscreen_mode.h
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\joystick.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\keyboard.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+	"allegro5/keycodes.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\keycodes.h
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\memory.h
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\monitor.h
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\mouse.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\mouse_cursor.h
+	"allegro5/base.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\system.h
+	"allegro5/config.h"
+	"allegro5/path.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\threads.h
+	"allegro5/altime.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\timer.h
+	"allegro5/base.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\tls.h
+	"allegro5/base.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\transformations.h
+	"allegro5/display.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\alcompat.h
+
+1480127701 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.h
+	<allegro5/allegro.h>
+	<string>
+	<stdlib.h>
+	<time.h>
+
+1480132584 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\main.cpp
+	<iostream>
+	<string.h>
+	<string>
+	<sstream>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	"allegro5/allegro_font.h"
+	"allegro5/allegro_ttf.h"
+	"super_peach.h"
+	"enermy.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_primitives.h
+	<allegro5/allegro.h>
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_image.h
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_native_dialog.h
+	"allegro5/allegro.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_font.h
+	"allegro5/allegro.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_ttf.h
+	"allegro5/allegro.h"
+	"allegro5/allegro_font.h"
+
+1480135507 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.h
+	<allegro5/allegro.h>
+
+1480134304 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.cpp
+	"super_peach.h"
+	<iostream>
+
+1480125562 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.cpp
+	"weapon.h"
+	<iostream>
+
+1480137673 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.cpp
+	"coins.h"
+	<string>
+
+1480137663 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.h
+	<iostream>
+
+1480384768 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/enemy.cpp
+	"enermy.h"
+	<iostream>
+
+1480384624 /home/smml1996/Documents/tareas/ccomp1/peach_inv/enermy.h
+	<allegro5/allegro.h>
+	<vector>
+	"coins.h"
+	"weapon.h"
+
+1480384588 /home/smml1996/Documents/tareas/ccomp1/peach_inv/weapon.h
+	<allegro5/allegro.h>
+	<string>
+	<stdlib.h>
+	<time.h>
+
+1480385136 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/main.cpp
+	<iostream>
+	<string.h>
+	<fstream>
+	<string>
+	<sstream>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	"allegro5/allegro_font.h"
+	"allegro5/allegro_ttf.h"
+	"allegro5/allegro_audio.h"
+	"allegro5/allegro_acodec.h"
+	"super_peach.h"
+	"enermy.h"
+
+1480220481 /home/smml1996/Documents/tareas/ccomp1/peach_inv/super_peach.h
+	<allegro5/allegro.h>
+
+1480384793 /home/smml1996/Documents/tareas/ccomp1/peach_inv/coins.h
+	<iostream>
+
+1480220460 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/super_peach.cpp
+	"super_peach.h"
+	<iostream>
+
+1480209109 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/weapon.cpp
+	"weapon.h"
+	<iostream>
+
+1480385114 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/coins.cpp
+	"coins.h"
+	<string>
+
+1480218284 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/inicia.cpp
+
+1480217950 /home/smml1996/Documents/tareas/ccomp1/peach_inv/inicia.cpp
+	<string.h>
+	<string>
+	<sstream>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	"allegro5/allegro_font.h"
+	"allegro5/allegro_ttf.h"
+	"super_peach.h"
+	"enermy.h"
+	"coins.h"
+
