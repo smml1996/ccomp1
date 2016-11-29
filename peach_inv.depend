@@ -402,3 +402,64 @@
 	"enermy.h"
 	"coins.h"
 
+1480418352 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\coins.cpp
+	"coins.h"
+	<string>
+
+1480418352 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\coins.h
+	<iostream>
+
+1480418352 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\enemy.cpp
+	"enermy.h"
+	<iostream>
+
+1480418352 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\enermy.h
+	<allegro5/allegro.h>
+	<vector>
+	"coins.h"
+	"weapon.h"
+
+1480418354 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\weapon.h
+	<allegro5/allegro.h>
+	<string>
+	<stdlib.h>
+	<time.h>
+
+1480418352 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\inicia.cpp
+
+1480418352 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\main.cpp
+	<iostream>
+	<string.h>
+	<fstream>
+	<string>
+	<sstream>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	"allegro5/allegro_image.h"
+	"allegro5/allegro_native_dialog.h"
+	"allegro5/allegro_font.h"
+	"allegro5/allegro_ttf.h"
+	"allegro5/allegro_audio.h"
+	"allegro5/allegro_acodec.h"
+	"super_peach.h"
+	"enermy.h"
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_audio.h
+	"allegro5/allegro.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_acodec.h
+	"allegro5/allegro.h"
+	"allegro5/allegro_audio.h"
+
+1480418354 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\super_peach.h
+	<allegro5/allegro.h>
+
+1480418354 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\super_peach.cpp
+	"super_peach.h"
+	<iostream>
+
+1480418354 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\weapon.cpp
+	"weapon.h"
+	<iostream>
+

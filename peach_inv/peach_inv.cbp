@@ -70,7 +70,9 @@
 		<Unit filename="img/weapon_enemy.png" />
 		<Unit filename="inicia.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="sounds/damage.wav" />
 		<Unit filename="sounds/game_over.wav" />
+		<Unit filename="sounds/peach_damage.wav" />
 		<Unit filename="super_peach.cpp" />
 		<Unit filename="super_peach.h" />
 		<Unit filename="weapon.cpp" />

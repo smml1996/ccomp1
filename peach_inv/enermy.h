@@ -1,4 +1,6 @@
 #include <allegro5/allegro.h>
+#include "allegro5/allegro_audio.h"
+#include "allegro5/allegro_acodec.h"
 #include <vector>
 #include "coins.h"
 #include "weapon.h"
@@ -45,7 +47,7 @@ class vector_enemigos{
     public:
         vector_enemigos(const bool &is_arcoiris, const ALLEGRO_MONITOR_INFO &info);
         bool move_enemies(const int &x1=0, const int &y1=0);
-        bool check_collision(const unsigned int &x,const unsigned int &y,int &puntos,Coins &mon);
+        bool check_collision(const unsigned int &x,const unsigned int &y,int &puntos,Coins &mon,ALLEGRO_SAMPLE *s);
         bool is_empty_();
         void refill(const bool &is_poni_arcoiris, const ALLEGRO_MONITOR_INFO &info);
 };

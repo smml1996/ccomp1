@@ -116,10 +116,11 @@ bool vector_enemigos::move_enemies(const int &x1, const int &y1){
     return false;
 }
 
-bool vector_enemigos::check_collision(const unsigned int &x, const unsigned int &y,int &puntos,Coins &mon){
+bool vector_enemigos::check_collision(const unsigned int &x, const unsigned int &y,int &puntos,Coins &mon,ALLEGRO_SAMPLE *s){
     Coins incremento(0.75);
     for(int i = 0; i<popoponies.size();i++){
         if(x >= popoponies[i]->get_x() && (y >= popoponies[i]->get_y() && y<= popoponies[i]->get_y()+90)){
+            al_play_sample(s, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_ONCE,NULL);
             Enemy * temp = popoponies[i];
             popoponies.erase(popoponies.begin()+i);
             delete temp;

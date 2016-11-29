@@ -55,7 +55,7 @@ int main(int argc, char **argv){
     bool key[3]={false,false, false};
     bool is_poni_arc =1;
     string ps =to_string(puntos), cs=to_string(monedas.get_value());
-    char const *pchar =ps.c_str(), *cchar=cs.c_str();char *j = "img/pony_vida_5.png";
+    char const *pchar =ps.c_str(), *cchar=cs.c_str();char *j = "img/pony_vida_5.png";char *peach_damage_sound="sounds/peach_damage.wav";
 
 
     ALLEGRO_DISPLAY *display = NULL;
@@ -70,17 +70,21 @@ int main(int argc, char **argv){
     al_init_font_addon();
     al_init_ttf_addon();
     al_install_keyboard();
+    al_install_audio();
+    al_init_acodec_addon();
+    al_reserve_samples(1);
     timer = al_create_timer(1.0 / FPS);
     al_get_monitor_info(0,&info);
     display = al_create_display(info.x2, info.y2);
     al_init_image_addon();
     al_start_timer(timer);
-    Pitchie p(info,j);
+    Pitchie p(info,j,peach_damage_sound);
     vector_enemigos v_e(0, info);
     ALLEGRO_COLOR color = al_map_rgba_f(1.0*ALPHA, 0.4*ALPHA, 0.6*ALPHA, ALPHA);
     ALLEGRO_COLOR cleanColor = al_map_rgb(0,0,0);
     image = al_load_bitmap("img/galaxy.jpg");
     ALLEGRO_FONT *font = al_load_ttf_font("fonts/Starfish.ttf",72,0);
+    ALLEGRO_SAMPLE *kill = al_load_sample("sounds/damage.wav");
     event_queue = al_create_event_queue();
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
@@ -173,8 +177,7 @@ int main(int argc, char **argv){
 
         for(unsigned int i = 0; i<weapons.size();i++){
 
-            if(!(weapons[i]->move_weapon(info)) ||v_e.check_collision(weapons[i]->get_x(), weapons[i]->get_y(),puntos,monedas)){
-
+            if(!(weapons[i]->move_weapon(info)) ||v_e.check_collision(weapons[i]->get_x(), weapons[i]->get_y(),puntos,monedas,kill)){
                 delete weapons[i];
                 weapons.erase(weapons.begin()+i);
                 Weapon::get_num_weapons()--;
@@ -196,13 +199,11 @@ int main(int argc, char **argv){
         al_flip_display();
 
     }
-
+    al_destroy_sample(kill);
     al_destroy_timer(timer);
     al_destroy_display(display);
     al_destroy_event_queue(event_queue);
-    al_install_audio();
-    al_init_acodec_addon();
-    al_reserve_samples(1);
+
     ALLEGRO_SAMPLE *sample= al_load_sample("sounds/game_over.wav");
     display = al_create_display(info.x2,info.y2);
     al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);

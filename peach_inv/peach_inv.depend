@@ -45,13 +45,16 @@
 	<vector>
 	"weapon.h"
 
-1480130894 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enemy.cpp
+1480420718 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enemy.cpp
 	"enermy.h"
 	<iostream>
 
-1480130271 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enermy.h
+1480420765 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\enermy.h
 	<allegro5/allegro.h>
+	"allegro5/allegro_audio.h"
+	"allegro5/allegro_acodec.h"
 	<vector>
+	"coins.h"
 	"weapon.h"
 
 1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro.h
@@ -279,15 +282,16 @@
 
 1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\alcompat.h
 
-1480127701 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.h
+1480418354 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.h
 	<allegro5/allegro.h>
 	<string>
 	<stdlib.h>
 	<time.h>
 
-1480132584 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\main.cpp
+1480421819 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\main.cpp
 	<iostream>
 	<string.h>
+	<fstream>
 	<string>
 	<sstream>
 	<vector>
@@ -297,6 +301,8 @@
 	"allegro5/allegro_native_dialog.h"
 	"allegro5/allegro_font.h"
 	"allegro5/allegro_ttf.h"
+	"allegro5/allegro_audio.h"
+	"allegro5/allegro_acodec.h"
 	"super_peach.h"
 	"enermy.h"
 
@@ -315,22 +321,24 @@
 	"allegro5/allegro.h"
 	"allegro5/allegro_font.h"
 
-1480135507 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.h
+1480421810 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.h
 	<allegro5/allegro.h>
+	"allegro5/allegro_audio.h"
+	"allegro5/allegro_acodec.h"
 
-1480134304 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.cpp
+1480418354 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\super_peach.cpp
 	"super_peach.h"
 	<iostream>
 
-1480125562 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.cpp
+1480418354 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\weapon.cpp
 	"weapon.h"
 	<iostream>
 
-1480137673 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.cpp
+1480418352 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.cpp
 	"coins.h"
 	<string>
 
-1480137663 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.h
+1480418352 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.h
 	<iostream>
 
 1480384768 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/enemy.cpp
@@ -401,4 +409,13 @@
 	"super_peach.h"
 	"enermy.h"
 	"coins.h"
+
+1480418352 source:i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\inicia.cpp
+
+1372646332 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_audio.h
+	"allegro5/allegro.h"
+
+1362345500 c:\mingw\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_acodec.h
+	"allegro5/allegro.h"
+	"allegro5/allegro_audio.h"
 

@@ -3,8 +3,9 @@
 
 using namespace std;
 
-Pitchie::Pitchie(const ALLEGRO_MONITOR_INFO &info,char * img){
+Pitchie::Pitchie(const ALLEGRO_MONITOR_INFO &info,char * img,char *sound){
     pitchie_img = al_load_bitmap(img);
+    sonido = al_load_sample(sound);
     vidas = 5;
     this->img=img;
     is_shooting = false;
@@ -19,6 +20,8 @@ ALLEGRO_BITMAP *Pitchie::get_image(){return pitchie_img;}
 
 void Pitchie::take_damage(bool &exit){
     vidas--;
+    al_play_sample(sonido,1.0, 0.0,1.0,ALLEGRO_PLAYMODE_ONCE,NULL);
+
     if(vidas <= 0){
         exit = true;
     }else{
@@ -37,7 +40,6 @@ void Pitchie::take_damage(bool &exit){
                 break;
         }
     }
-
 }
 
 void Pitchie::change_position(const bool is_up, const ALLEGRO_MONITOR_INFO &info){
