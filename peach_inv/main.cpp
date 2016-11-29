@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
@@ -13,7 +14,6 @@
 #include "allegro5/allegro_acodec.h"
 #include "super_peach.h"
 #include "enermy.h"
-#include "coins.h"
 #define ALPHA 0.5f
 #define FPS 20.0
 
@@ -21,8 +21,7 @@ using namespace std;
 
 
 int puntos = 0;
-Coins monedas;
-Coins incremento(5);
+Coins monedas(0.0);
 int score = 0;
 
 enum keys {
@@ -37,11 +36,22 @@ string to_string(t i)
     return ss.str();
 }
 int main(int argc, char **argv){
+    ifstream source("highscores.txt");
+    string pun;
+    string puntajes;
+    for(int i = 0; i<3; i++){
+    source>>pun;
+    puntajes+="              "+pun;
+    puntajes+='\n';
+    }
 
+
+    source.close();
 
     bool is_weapon;
     vector<Weapon *> weapons;
     bool wanna_exit= false;
+    bool wanna_start=false;
     bool key[3]={false,false, false};
     bool is_poni_arc =1;
     string ps =to_string(puntos), cs=to_string(monedas.get_value());
@@ -75,6 +85,25 @@ int main(int argc, char **argv){
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
+    al_draw_bitmap(al_load_bitmap("img/init_img.png"),0,0,0);
+    al_draw_text(font, color, info.x2/2,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, "empezar [espacio]");
+    al_draw_text(font, color, info.x2/2,info.y2/2,ALLEGRO_ALIGN_CENTRE, "puntajes [p]");
+
+    al_flip_display();
+
+    while(!wanna_start){
+       al_wait_for_event(event_queue, &ev);
+        if(ev.type == ALLEGRO_EVENT_KEY_UP) {
+            switch(ev.keyboard.keycode) {
+                case ALLEGRO_KEY_P:
+                     al_show_native_message_box(display, "PUNTAJES", "                                           ", puntajes.c_str(), "ok", 0);
+                    break;
+                case ALLEGRO_KEY_SPACE:
+                    wanna_start=true;
+                    break;
+            }
+        }
+    }
 
 
     while(!wanna_exit){
@@ -144,25 +173,18 @@ int main(int argc, char **argv){
 
         for(unsigned int i = 0; i<weapons.size();i++){
 
-            if(!(weapons[i]->move_weapon(info)) ||v_e.check_collision(weapons[i]->get_x(), weapons[i]->get_y())){
+            if(!(weapons[i]->move_weapon(info)) ||v_e.check_collision(weapons[i]->get_x(), weapons[i]->get_y(),puntos,monedas)){
 
                 delete weapons[i];
                 weapons.erase(weapons.begin()+i);
                 Weapon::get_num_weapons()--;
-                puntos+=10;
-                monedas = monedas +incremento;
-
             }
-
         }
 
         if(v_e.is_empty_()){
-
             v_e.refill(is_poni_arc,info);
             is_poni_arc = !is_poni_arc;
-
         }
-
         ps  = to_string(puntos);
         cs = to_string(monedas.get_value());
         pchar = ps.c_str();
@@ -170,7 +192,7 @@ int main(int argc, char **argv){
         al_draw_text(font, color, info.x2/2,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, "Puntos: ");
         al_draw_text(font, color, (info.x2/2)+210,info.y2/2 -200,ALLEGRO_ALIGN_CENTRE, pchar);
         al_draw_text(font, color, info.x2/2,info.y2/2,ALLEGRO_ALIGN_CENTRE, cchar);
-        al_draw_text(font, color, info.x2/2+100,info.y2/2,ALLEGRO_ALIGN_CENTRE, "$");
+        al_draw_text(font, color, info.x2/2+150,info.y2/2,ALLEGRO_ALIGN_CENTRE, "$");
         al_flip_display();
 
     }
@@ -188,9 +210,8 @@ int main(int argc, char **argv){
     image = al_load_bitmap("img/final_pic.png");
     al_draw_bitmap(image,0,0,0);
     al_flip_display();
-    al_rest(20.0);
+    al_rest(15.0);
     al_destroy_display(display);
     al_destroy_sample(sample);
-
     return 0;
 }

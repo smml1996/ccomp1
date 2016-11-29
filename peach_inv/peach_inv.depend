@@ -333,24 +333,26 @@
 1480137663 i:\trabajos ucsp\semestre ii\ciencias de la computacion i\pinv\ccomp1\peach_inv\coins.h
 	<iostream>
 
-1480219618 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/enemy.cpp
+1480384768 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/enemy.cpp
 	"enermy.h"
 	<iostream>
 
-1480181316 /home/smml1996/Documents/tareas/ccomp1/peach_inv/enermy.h
+1480384624 /home/smml1996/Documents/tareas/ccomp1/peach_inv/enermy.h
 	<allegro5/allegro.h>
 	<vector>
+	"coins.h"
 	"weapon.h"
 
-1480181316 /home/smml1996/Documents/tareas/ccomp1/peach_inv/weapon.h
+1480384588 /home/smml1996/Documents/tareas/ccomp1/peach_inv/weapon.h
 	<allegro5/allegro.h>
 	<string>
 	<stdlib.h>
 	<time.h>
 
-1480223955 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/main.cpp
+1480385136 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/main.cpp
 	<iostream>
 	<string.h>
+	<fstream>
 	<string>
 	<sstream>
 	<vector>
@@ -364,12 +366,11 @@
 	"allegro5/allegro_acodec.h"
 	"super_peach.h"
 	"enermy.h"
-	"coins.h"
 
 1480220481 /home/smml1996/Documents/tareas/ccomp1/peach_inv/super_peach.h
 	<allegro5/allegro.h>
 
-1480181316 /home/smml1996/Documents/tareas/ccomp1/peach_inv/coins.h
+1480384793 /home/smml1996/Documents/tareas/ccomp1/peach_inv/coins.h
 	<iostream>
 
 1480220460 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/super_peach.cpp
@@ -380,7 +381,7 @@
 	"weapon.h"
 	<iostream>
 
-1480181316 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/coins.cpp
+1480385114 source:/home/smml1996/Documents/tareas/ccomp1/peach_inv/coins.cpp
 	"coins.h"
 	<string>
 

@@ -64,7 +64,7 @@ bool poni_rudo::move_enemy(const int &x1, const int &y1){
 
     for(int i = 0; i<nubes.size(); i++ ){
         nubes[i]->move_weapon();
-        if(nubes[i]->get_x()>=x1-30 && nubes[i]->get_x()<=x1+30  && nubes[i]->get_y()>=y1-90 && nubes[i]->get_y()<=y1+90){
+        if(nubes[i]->get_x()>=x1-30 && nubes[i]->get_x()<=x1+30  && nubes[i]->get_y()>=y1-60 && nubes[i]->get_y()<=y1+60){
             delete nubes[i];
             nubes.erase(nubes.begin()+i);
             return true;
@@ -116,12 +116,15 @@ bool vector_enemigos::move_enemies(const int &x1, const int &y1){
     return false;
 }
 
-bool vector_enemigos::check_collision(const unsigned int &x, const unsigned int &y){
+bool vector_enemigos::check_collision(const unsigned int &x, const unsigned int &y,int &puntos,Coins &mon){
+    Coins incremento(0.75);
     for(int i = 0; i<popoponies.size();i++){
         if(x >= popoponies[i]->get_x() && (y >= popoponies[i]->get_y() && y<= popoponies[i]->get_y()+90)){
             Enemy * temp = popoponies[i];
             popoponies.erase(popoponies.begin()+i);
             delete temp;
+            puntos+=10;
+            mon = mon +incremento;
             return true;
         }
     }return false;

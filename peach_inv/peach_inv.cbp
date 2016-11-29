@@ -53,11 +53,13 @@
 		<Unit filename="enemy.cpp" />
 		<Unit filename="enermy.h" />
 		<Unit filename="fonts/Starfish.ttf" />
+		<Unit filename="highscores.txt" />
 		<Unit filename="img/enemigo.png" />
 		<Unit filename="img/enemigo2.png" />
 		<Unit filename="img/final_pic.png" />
 		<Unit filename="img/galaxy.jpg" />
 		<Unit filename="img/horn.png" />
+		<Unit filename="img/init_img.png" />
 		<Unit filename="img/peach.png" />
 		<Unit filename="img/pony_vida_0.png" />
 		<Unit filename="img/pony_vida_1.png" />

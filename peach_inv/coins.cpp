@@ -3,13 +3,13 @@
 Coins::Coins(){
     value=0;
 }
-Coins::Coins(int x){
+Coins::Coins(float x){
     value= x;
 }
-int Coins::get_value(){
+float Coins::get_value(){
     return value;
 }
-void Coins::set_value(int val){
+void Coins::set_value(float val){
     value=val;
 }
 Coins Coins::operator+(Coins o){
